@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 //Server port
-http.listen(8080, () => {
+http.listen(3300, () => {
     console.log('listening on *:3300');
   });
 

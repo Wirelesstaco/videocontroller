@@ -34,7 +34,7 @@ function onMessageHandler (target, context, msg, self) {
     const num = rollDice(commandName);
     client.say(target, `You rolled a ${num}.`);
     console.log(`* Executed ${commandName} command`);
-  } else if (commandName === '!great') {
+  } else if (commandName === '#great') {
 
     client.say(target, `We Are Great`);
   }

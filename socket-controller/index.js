@@ -2,7 +2,7 @@ var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-// What html file ot look at 
+// What html file to look at 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });

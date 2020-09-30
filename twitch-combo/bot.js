@@ -32,13 +32,16 @@ function onMessageHandler (target, context, msg, self) {
   // If the command is known, let's execute it
   if (commandName === '!d20') {
     //console.log(test);
- 
+   
     const num = rollDice(commandName);
     client.say(target, `You rolled a ${num}.`);
     console.log(`* Executed ${commandName} command`);
   } else if (commandName === '#great') {
 
     client.say(target, `We Are Great`);
+  } else if (commandName === '1') {
+    io.emit('chat message', commandName);
+    client.say(commandName, `Command Recived`);
   }
 
     else {
@@ -84,6 +87,7 @@ io.on('connection', (socket) => {
         console.log('message: ' + msg);
         io.emit('chat message', msg); // send msg to everyone including sender
         io.emit('xpos', msg); 
+
         
     });
 
@@ -93,7 +97,7 @@ io.on('connection', (socket) => {
   });
 });
 
-
+//You can skip the connection and jus io.emit.
 
 
 

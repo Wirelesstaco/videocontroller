@@ -40,9 +40,17 @@ function onMessageHandler (target, context, msg, self) {
 
     client.say(target, `We Are Great`);
   } else if (commandName === '1') {
-    io.emit('chat message', commandName);
-    client.say(commandName, `Command Recived`);
-  }
+    io.emit('movep', commandName);
+  }else if (commandName === '2') {
+    io.emit('movep', commandName); 
+  }else if (commandName === '3') {
+    io.emit('movep', commandName); 
+  }else if (commandName === '4') {
+    io.emit('movep', commandName); 
+  } else if (commandName === '5') {
+  io.emit('movep', commandName); 
+}
+
 
     else {
     console.log(`* Unknown command ${commandName}`);
@@ -96,20 +104,3 @@ io.on('connection', (socket) => {
     
   });
 });
-
-//You can skip the connection and jus io.emit.
-
-
-
-
-
-
-
-
-setTimeout(function () {
-  console.log('timeout completed'); 
-}, 1000); 
-setTimeout(function () {
-  io.emit('chat message', "gimme");
-}, 2000); 
-io.sockets.emit('xpos', '111'); // send msg to everyone including sender
